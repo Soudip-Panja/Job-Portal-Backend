@@ -35,7 +35,7 @@ async function seedData() {
         jobDescription: jobData.jobDescription,
         qualifications: jobData.qualifications,
       });
-      newJob.save();
+      await newJob.save(); // Added await here
     }
     console.log("Seed data inserted successfully.");
   } catch (error) {
@@ -43,7 +43,6 @@ async function seedData() {
   }
 }
 // seedData();
-
 
 async function readAllJobs() {
   try {
@@ -82,31 +81,26 @@ app.get("/jobs/:id", async (req, res) => {
   }
 });
 
-
-//For posting new job part
+// For posting new job part
 async function createJob(newJob) {
-  try{
-    const job = new Job(newJob)
-    const saveJob = await job.save()
-    return saveJob
+  try {
+    const job = new Job(newJob);
+    const savedJob = await job.save();
+    console.log("New Job data:", savedJob);
+    return savedJob; // Added return statement
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
-
-app.post("/jobs", async(req, res) => {
-  try{
+app.post("/jobs", async (req, res) => {
+  try {
     const savedJob = await createJob(req.body);
-    res
-      .status(201)
-      .json({message: "Job added successfully.", job: savedJob});
+    res.status(201).json({ message: "Job added successfully.", job: savedJob });
   } catch (error) {
-    res.status(500).json({error: "Failed to add job."});
+    res.status(500).json({ error: "Failed to add job." });
   }
 });
-
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
