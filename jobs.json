@@ -1,0 +1,74 @@
+[
+  {
+    "jobTitle": "Frontend Developer",
+    "companyName": "TechNova Solutions",
+    "companyLocation": "Bengaluru, India",
+    "salary": 650000,
+    "jobType": ["Full-time (On-site)"],
+    "jobDescription": "Develop and maintain user-facing features using React and Tailwind CSS.",
+    "qualifications": "Bachelor's degree in Computer Science or related field. 1+ year of experience with frontend technologies."
+  },
+  {
+    "jobTitle": "Backend Developer",
+    "companyName": "DataCraft Inc.",
+    "companyLocation": "Hyderabad, India",
+    "salary": 750000,
+    "jobType": ["Full-time (Remote)"],
+    "jobDescription": "Build scalable APIs and database solutions using Node.js and MongoDB.",
+    "qualifications": "Bachelor's degree in CS or IT. 2+ years of backend development experience."
+  },
+  {
+    "jobTitle": "UI/UX Designer",
+    "companyName": "PixelBloom",
+    "companyLocation": "Pune, India",
+    "salary": 550000,
+    "jobType": ["Part-time (Remote)"],
+    "jobDescription": "Design clean and engaging user interfaces and experiences for web and mobile apps.",
+    "qualifications": "Any design degree or diploma. Proficiency in Figma, Adobe XD."
+  },
+  {
+    "jobTitle": "Software QA Tester",
+    "companyName": "CodeVerify Pvt Ltd",
+    "companyLocation": "Kolkata, India",
+    "salary": 480000,
+    "jobType": ["Full-time (On-site)"],
+    "jobDescription": "Perform manual and automated testing to ensure software quality.",
+    "qualifications": "B.Tech or MCA with 1+ year QA experience. Knowledge of Selenium is a plus."
+  },
+  {
+    "jobTitle": "DevOps Engineer",
+    "companyName": "CloudScalers",
+    "companyLocation": "Chennai, India",
+    "salary": 900000,
+    "jobType": ["Full-time (Remote)"],
+    "jobDescription": "Manage CI/CD pipelines and cloud infrastructure using AWS and Docker.",
+    "qualifications": "Bachelor's degree in CS. 2+ years in DevOps/SRE roles."
+  },
+  {
+    "jobTitle": "Data Analyst",
+    "companyName": "InsightEdge Analytics",
+    "companyLocation": "Mumbai, India",
+    "salary": 720000,
+    "jobType": ["Part-time (On-site)"],
+    "jobDescription": "Analyze large datasets to provide actionable insights and dashboards.",
+    "qualifications": "Degree in Statistics, Math or CS. Proficient in SQL, Excel, Power BI or Tableau."
+  },
+  {
+    "jobTitle": "Technical Support Engineer",
+    "companyName": "GlobalTech HelpDesk",
+    "companyLocation": "Noida, India",
+    "salary": 400000,
+    "jobType": ["Full-time (On-site)"],
+    "jobDescription": "Provide technical assistance and resolve software/hardware issues for clients.",
+    "qualifications": "Any tech degree or diploma. Good communication and troubleshooting skills."
+  },
+  {
+    "jobTitle": "Digital Marketing Associate",
+    "companyName": "BrightBuzz Media",
+    "companyLocation": "Ahmedabad, India",
+    "salary": 500000,
+    "jobType": ["Full-time (Remote)"],
+    "jobDescription": "Manage SEO, SEM and social media campaigns to boost brand presence.",
+    "qualifications": "Bachelor's in Marketing or equivalent. Knowledge of Google Ads and Analytics."
+  }
+]
