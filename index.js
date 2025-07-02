@@ -35,7 +35,7 @@ async function seedData() {
         jobDescription: jobData.jobDescription,
         qualifications: jobData.qualifications,
       });
-      await newJob.save(); // Added await here
+      newJob.save();
     }
     console.log("Seed data inserted successfully.");
   } catch (error) {
@@ -44,6 +44,8 @@ async function seedData() {
 }
 // seedData();
 
+
+// Get Routs
 async function readAllJobs() {
   try {
     const allJobs = await Job.find();
@@ -81,13 +83,13 @@ app.get("/jobs/:id", async (req, res) => {
   }
 });
 
-// For posting new job part
+// Post Routs
 async function createJob(newJob) {
   try {
     const job = new Job(newJob);
     const savedJob = await job.save();
     console.log("New Job data:", savedJob);
-    return savedJob; // Added return statement
+    return savedJob; 
   } catch (error) {
     throw error;
   }
@@ -104,7 +106,7 @@ app.post("/jobs", async (req, res) => {
   }
 });
 
-// For deleting job by ID
+// Delete Routs
 async function deleteJobById(jobId) {
   try {
     const deletedJob = await Job.findByIdAndDelete(jobId);
