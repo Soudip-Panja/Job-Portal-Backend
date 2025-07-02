@@ -44,6 +44,7 @@ async function seedData() {
 }
 // seedData();
 
+
 async function readAllJobs() {
   try {
     const allJobs = await Job.find();
@@ -69,7 +70,6 @@ app.get("/jobs", async (req, res) => {
   }
 });
 
-
 app.get("/jobs/:id", async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -81,6 +81,32 @@ app.get("/jobs/:id", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch job." });
   }
 });
+
+
+//For posting new job part
+async function createJob(newJob) {
+  try{
+    const job = new Job(newJob)
+    const saveJob = await job.save()
+    console.log("New Job data:", saveJob)
+  } catch (error) {
+    throw error
+  }
+}
+createJob(newJob)
+
+app.post("/jobs", async(req, res) => {
+  try{
+    const savedJob = await createJob(req.body);
+    res
+      .status(201)
+      .json({message: "Job added successfully.", job: savedJob});
+  } catch (error) {
+    res.status(500).json({error: "Failed to add job."});
+  }
+});
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
