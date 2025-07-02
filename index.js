@@ -96,7 +96,9 @@ async function createJob(newJob) {
 app.post("/jobs", async (req, res) => {
   try {
     const savedJob = await createJob(req.body);
-    res.status(201).json({ message: "Job added successfully.", job: savedJob });
+    res
+      .status(201)
+      .json({ message: "Job added successfully.", job: savedJob });
   } catch (error) {
     res.status(500).json({ error: "Failed to add job." });
   }
