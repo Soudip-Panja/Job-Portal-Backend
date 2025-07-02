@@ -104,6 +104,31 @@ app.post("/jobs", async (req, res) => {
   }
 });
 
+// For deleting job by ID
+async function deleteJobById(jobId) {
+  try {
+    const deletedJob = await Job.findByIdAndDelete(jobId);
+    return deletedJob;
+  } catch (error) {
+    throw error;
+  }
+}
+
+app.delete("/jobs/:id", async (req, res) => {
+  try {
+    const deletedJob = await deleteJobById(req.params.id);
+    if (!deletedJob) {
+      return res.status(404).json({ error: "Job not found." });
+    }
+    res.status(200).json({ 
+      message: "Job deleted successfully.", 
+      job: deletedJob 
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to delete job." });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
