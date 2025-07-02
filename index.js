@@ -88,12 +88,12 @@ async function createJob(newJob) {
   try{
     const job = new Job(newJob)
     const saveJob = await job.save()
-    console.log("New Job data:", saveJob)
+    return saveJob
   } catch (error) {
     throw error
   }
 }
-createJob(newJob)
+
 
 app.post("/jobs", async(req, res) => {
   try{
